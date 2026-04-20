@@ -5,6 +5,7 @@ import { registerDeploymentTools } from "./tools/deployments.js";
 import { registerProjectTools } from "./tools/projects.js";
 import { registerEnvTools } from "./tools/env.js";
 import { registerAliasTools } from "./tools/aliases.js";
+import { registerCompositeTools } from "./tools/composite.js";
 
 const server = new McpServer({
   name: "vercel-mcp-server",
@@ -15,6 +16,7 @@ registerDeploymentTools(server);
 registerProjectTools(server);
 registerEnvTools(server);
 registerAliasTools(server);
+registerCompositeTools(server);
 
 async function main() {
   if (!process.env.VERCEL_TOKEN) {
