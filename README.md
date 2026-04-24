@@ -1,4 +1,6 @@
-# vercel-mcp-server
+# @paramxclaudedev/vercel-mcp
+
+[![npm](https://img.shields.io/npm/v/@paramxclaudedev/vercel-mcp)](https://www.npmjs.com/package/@paramxclaudedev/vercel-mcp)
 
 MCP server for the Vercel REST API. Lets Claude inspect deployments, manage projects, attach domains, set env vars, and read build logs without leaving the chat.
 
@@ -28,15 +30,16 @@ MCP server for the Vercel REST API. Lets Claude inspect deployments, manage proj
 2. Optional: grab your team ID from team settings if you want to scope to a team rather than personal.
 3. Install:
    ```bash
-   pnpm install
-   pnpm build
+   npx @paramxclaudedev/vercel-mcp
+   # or install globally
+   npm install -g @paramxclaudedev/vercel-mcp
    ```
 4. Add to your Claude Code MCP config (`~/.claude.json`):
    ```jsonc
    "mcpServers": {
      "vercel": {
-       "command": "node",
-       "args": ["/absolute/path/to/vercel-mcp/dist/index.js"],
+       "command": "npx",
+       "args": ["@paramxclaudedev/vercel-mcp"],
        "env": {
          "VERCEL_TOKEN": "...",
          "VERCEL_TEAM_ID": "team_..." // optional

@@ -1,18 +1,39 @@
 {
-  "name": "vercel-mcp-server",
+  "name": "@paramxclaudedev/vercel-mcp",
   "version": "0.1.0",
   "description": "MCP server for the Vercel REST API. Deployments, projects, domains, env vars, build logs.",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "vercel-mcp-server": "dist/index.js"
+    "vercel-mcp": "dist/index.js"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "tsx watch src/index.ts",
     "smoke": "tsx scripts/smoke-test.ts",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "prepare": "pnpm build"
+  },
+  "keywords": [
+    "mcp",
+    "vercel",
+    "deployment",
+    "claude",
+    "model-context-protocol"
+  ],
+  "author": "Param Vaswani",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paramxclaudedev/vercel-mcp.git"
+  },
+  "homepage": "https://github.com/paramxclaudedev/vercel-mcp#readme",
+  "publishConfig": {
+    "access": "public"
   },
   "engines": {
     "node": ">=18"
